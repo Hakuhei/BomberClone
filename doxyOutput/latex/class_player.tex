@@ -1,0 +1,342 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_aa276b0ca5f210a31048fb4929e00a6b5}{Player} (int x, int y, int health\+Input, int max\+Bombs\+Input, int range, int p, String n)
+\item 
+void \hyperlink{class_player_a6169405e26100cc9d10e60d701171d14}{set\+X\+Pos} (int x)
+\item 
+void \hyperlink{class_player_a20babc9f961a026fcc7aaac5f8769be3}{set\+Y\+Pos} (int y)
+\item 
+void \hyperlink{class_player_a7ba0f4055816210ab2d9d665552e3a83}{set\+Direction} (int d)
+\item 
+void \hyperlink{class_player_a8e246afb1a58320ee83182e774ee98fa}{set\+State} (int s)
+\item 
+void \hyperlink{class_player_a5505703d7d5af25e11a4daceefb03cfe}{increase\+Bomb\+Range} (int r)
+\item 
+void \hyperlink{class_player_ae2ad118a0435e9414cfa890fe2599784}{increase\+Bomb\+Limit} (int x)
+\item 
+void \hyperlink{class_player_a3a9cccf5deb51d376068eb572c35a21b}{update\+Health} (int h)
+\item 
+void \hyperlink{class_player_aa753f19d3b1cc39ec2feaf2311de21bc}{blasted} ()
+\item 
+void \hyperlink{class_player_a78b1b36f3e4c60cbb278ee4f137d0a47}{bomb\+Used} ()
+\item 
+void \hyperlink{class_player_a95412f297578bc8cfdf46a538a25e9a2}{phase\+Over} ()
+\item 
+void \hyperlink{class_player_a30f161013b8d1aab47c651438bafeb30}{bomb\+Exploded} ()
+\item 
+int \hyperlink{class_player_a458088c2eeff500745b93001ee745bb3}{get\+X\+Pos} ()
+\item 
+int \hyperlink{class_player_afc249a531c27c856bdda91a93d8ec2e2}{get\+Grid\+X\+Pos} ()
+\item 
+int \hyperlink{class_player_a382e547f48d5d081e5edec8439d94cff}{get\+Grid\+Y\+Pos} ()
+\item 
+int \hyperlink{class_player_a49e9b428745bb572aa5380b51b5afb95}{get\+Y\+Pos} ()
+\item 
+int \hyperlink{class_player_a7ae395cce6cb36c6732e57f31787a381}{get\+Health} ()
+\item 
+int \hyperlink{class_player_a466088c4480791a464445d96d29877f6}{get\+Direction} ()
+\item 
+int \hyperlink{class_player_a31698fa7da3e19a859cd2af11c413ecf}{get\+Used\+Bombs} ()
+\item 
+int \hyperlink{class_player_a7bdbdb3d9b9419225f4a885da14728b5}{get\+Max\+Bombs} ()
+\item 
+int \hyperlink{class_player_ab11ac70ce6737ab6a7e8ffcda070bdfc}{get\+Bomb\+Range} ()
+\item 
+int \hyperlink{class_player_a152c1cbd89c6c73639d1e590db2bca9c}{get\+Player\+Num} ()
+\item 
+int \hyperlink{class_player_ac2518937ade66e10dc5093a6f7bdd8a6}{get\+State} ()
+\item 
+String \hyperlink{class_player_a7b17595bbe9876d4aa469ad9bee644dd}{get\+Name} ()
+\item 
+boolean \hyperlink{class_player_a18a27ee5d3e5d698a172391179e672a5}{check\+Post\+Phase} ()
+\item 
+void \hyperlink{class_player_ad470883cce200d3933fbf5c4ce6465a6}{run} ()
+\item 
+void \hyperlink{class_player_a3a45889c4b4bc78d219caed03dd04ec7}{reset\+Bomb\+Key} (int p)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_player_ab064f330cef84e2e062fd6446db24184}{health} = 0
+\item 
+int \hyperlink{class_player_a280608b62fdcd7f31cb54cf0787cff7f}{x\+Pos} = 0
+\item 
+int \hyperlink{class_player_aa2706c56cfb101d02b73e371cfb98cd1}{y\+Pos} = 0
+\item 
+int \hyperlink{class_player_acb502d33ffa4e20bd1d275126dc471ed}{max\+Bombs} = 0
+\item 
+int \hyperlink{class_player_ab6fd5604046c7ddee01bd5f9b9e69341}{used\+Bombs} = 0
+\item 
+int \hyperlink{class_player_ae8871f87983cdc59d20c9408b1db88af}{bomb\+Range} = 0
+\item 
+int \hyperlink{class_player_a497a7481dfd1f564d9cfcc45cc470e1f}{player\+Num} = 0
+\item 
+boolean \hyperlink{class_player_a961b7def0b24fdb72ded51d4bb15c6d0}{post\+Phase} = false
+\item 
+int \hyperlink{class_player_a43caa331c7c9f40c51862ad1ebb439ba}{direction} = 0
+\item 
+Thread \hyperlink{class_player_a2b205a0aba33f0cd4a4b6bbb9b03df35}{timer}
+\item 
+int \hyperlink{class_player_a73f30624033a23aa5bc290103528e77e}{state} = 0
+\item 
+boolean \hyperlink{class_player_a8e3ab9f7eed5d3b80be53d3b617d718b}{alive} = true
+\item 
+String \hyperlink{class_player_aa70e75b3cc209ea82a17c469de0f159c}{name} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_player_aa276b0ca5f210a31048fb4929e00a6b5}{}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player(int x, int y, int health\+Input, int max\+Bombs\+Input, int range, int p, String n)}]{\setlength{\rightskip}{0pt plus 5cm}Player.\+Player (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{health\+Input, }
+\item[{int}]{max\+Bombs\+Input, }
+\item[{int}]{range, }
+\item[{int}]{p, }
+\item[{String}]{n}
+\end{DoxyParamCaption}
+)}\label{class_player_aa276b0ca5f210a31048fb4929e00a6b5}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_player_aa753f19d3b1cc39ec2feaf2311de21bc}{}\index{Player@{Player}!blasted@{blasted}}
+\index{blasted@{blasted}!Player@{Player}}
+\subsubsection[{blasted()}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+blasted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_aa753f19d3b1cc39ec2feaf2311de21bc}
+\hypertarget{class_player_a30f161013b8d1aab47c651438bafeb30}{}\index{Player@{Player}!bomb\+Exploded@{bomb\+Exploded}}
+\index{bomb\+Exploded@{bomb\+Exploded}!Player@{Player}}
+\subsubsection[{bomb\+Exploded()}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+bomb\+Exploded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a30f161013b8d1aab47c651438bafeb30}
+\hypertarget{class_player_a78b1b36f3e4c60cbb278ee4f137d0a47}{}\index{Player@{Player}!bomb\+Used@{bomb\+Used}}
+\index{bomb\+Used@{bomb\+Used}!Player@{Player}}
+\subsubsection[{bomb\+Used()}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+bomb\+Used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a78b1b36f3e4c60cbb278ee4f137d0a47}
+\hypertarget{class_player_a18a27ee5d3e5d698a172391179e672a5}{}\index{Player@{Player}!check\+Post\+Phase@{check\+Post\+Phase}}
+\index{check\+Post\+Phase@{check\+Post\+Phase}!Player@{Player}}
+\subsubsection[{check\+Post\+Phase()}]{\setlength{\rightskip}{0pt plus 5cm}boolean Player.\+check\+Post\+Phase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a18a27ee5d3e5d698a172391179e672a5}
+\hypertarget{class_player_ab11ac70ce6737ab6a7e8ffcda070bdfc}{}\index{Player@{Player}!get\+Bomb\+Range@{get\+Bomb\+Range}}
+\index{get\+Bomb\+Range@{get\+Bomb\+Range}!Player@{Player}}
+\subsubsection[{get\+Bomb\+Range()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Bomb\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_ab11ac70ce6737ab6a7e8ffcda070bdfc}
+\hypertarget{class_player_a466088c4480791a464445d96d29877f6}{}\index{Player@{Player}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!Player@{Player}}
+\subsubsection[{get\+Direction()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a466088c4480791a464445d96d29877f6}
+\hypertarget{class_player_afc249a531c27c856bdda91a93d8ec2e2}{}\index{Player@{Player}!get\+Grid\+X\+Pos@{get\+Grid\+X\+Pos}}
+\index{get\+Grid\+X\+Pos@{get\+Grid\+X\+Pos}!Player@{Player}}
+\subsubsection[{get\+Grid\+X\+Pos()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Grid\+X\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_afc249a531c27c856bdda91a93d8ec2e2}
+\hypertarget{class_player_a382e547f48d5d081e5edec8439d94cff}{}\index{Player@{Player}!get\+Grid\+Y\+Pos@{get\+Grid\+Y\+Pos}}
+\index{get\+Grid\+Y\+Pos@{get\+Grid\+Y\+Pos}!Player@{Player}}
+\subsubsection[{get\+Grid\+Y\+Pos()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Grid\+Y\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a382e547f48d5d081e5edec8439d94cff}
+\hypertarget{class_player_a7ae395cce6cb36c6732e57f31787a381}{}\index{Player@{Player}!get\+Health@{get\+Health}}
+\index{get\+Health@{get\+Health}!Player@{Player}}
+\subsubsection[{get\+Health()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Health (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a7ae395cce6cb36c6732e57f31787a381}
+\hypertarget{class_player_a7bdbdb3d9b9419225f4a885da14728b5}{}\index{Player@{Player}!get\+Max\+Bombs@{get\+Max\+Bombs}}
+\index{get\+Max\+Bombs@{get\+Max\+Bombs}!Player@{Player}}
+\subsubsection[{get\+Max\+Bombs()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Max\+Bombs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a7bdbdb3d9b9419225f4a885da14728b5}
+\hypertarget{class_player_a7b17595bbe9876d4aa469ad9bee644dd}{}\index{Player@{Player}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Player@{Player}}
+\subsubsection[{get\+Name()}]{\setlength{\rightskip}{0pt plus 5cm}String Player.\+get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a7b17595bbe9876d4aa469ad9bee644dd}
+\hypertarget{class_player_a152c1cbd89c6c73639d1e590db2bca9c}{}\index{Player@{Player}!get\+Player\+Num@{get\+Player\+Num}}
+\index{get\+Player\+Num@{get\+Player\+Num}!Player@{Player}}
+\subsubsection[{get\+Player\+Num()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Player\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a152c1cbd89c6c73639d1e590db2bca9c}
+\hypertarget{class_player_ac2518937ade66e10dc5093a6f7bdd8a6}{}\index{Player@{Player}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Player@{Player}}
+\subsubsection[{get\+State()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_ac2518937ade66e10dc5093a6f7bdd8a6}
+\hypertarget{class_player_a31698fa7da3e19a859cd2af11c413ecf}{}\index{Player@{Player}!get\+Used\+Bombs@{get\+Used\+Bombs}}
+\index{get\+Used\+Bombs@{get\+Used\+Bombs}!Player@{Player}}
+\subsubsection[{get\+Used\+Bombs()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Used\+Bombs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a31698fa7da3e19a859cd2af11c413ecf}
+\hypertarget{class_player_a458088c2eeff500745b93001ee745bb3}{}\index{Player@{Player}!get\+X\+Pos@{get\+X\+Pos}}
+\index{get\+X\+Pos@{get\+X\+Pos}!Player@{Player}}
+\subsubsection[{get\+X\+Pos()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+X\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a458088c2eeff500745b93001ee745bb3}
+\hypertarget{class_player_a49e9b428745bb572aa5380b51b5afb95}{}\index{Player@{Player}!get\+Y\+Pos@{get\+Y\+Pos}}
+\index{get\+Y\+Pos@{get\+Y\+Pos}!Player@{Player}}
+\subsubsection[{get\+Y\+Pos()}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+get\+Y\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a49e9b428745bb572aa5380b51b5afb95}
+\hypertarget{class_player_ae2ad118a0435e9414cfa890fe2599784}{}\index{Player@{Player}!increase\+Bomb\+Limit@{increase\+Bomb\+Limit}}
+\index{increase\+Bomb\+Limit@{increase\+Bomb\+Limit}!Player@{Player}}
+\subsubsection[{increase\+Bomb\+Limit(int x)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+increase\+Bomb\+Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\label{class_player_ae2ad118a0435e9414cfa890fe2599784}
+\hypertarget{class_player_a5505703d7d5af25e11a4daceefb03cfe}{}\index{Player@{Player}!increase\+Bomb\+Range@{increase\+Bomb\+Range}}
+\index{increase\+Bomb\+Range@{increase\+Bomb\+Range}!Player@{Player}}
+\subsubsection[{increase\+Bomb\+Range(int r)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+increase\+Bomb\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{r}
+\end{DoxyParamCaption}
+)}\label{class_player_a5505703d7d5af25e11a4daceefb03cfe}
+\hypertarget{class_player_a95412f297578bc8cfdf46a538a25e9a2}{}\index{Player@{Player}!phase\+Over@{phase\+Over}}
+\index{phase\+Over@{phase\+Over}!Player@{Player}}
+\subsubsection[{phase\+Over()}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+phase\+Over (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a95412f297578bc8cfdf46a538a25e9a2}
+\hypertarget{class_player_a3a45889c4b4bc78d219caed03dd04ec7}{}\index{Player@{Player}!reset\+Bomb\+Key@{reset\+Bomb\+Key}}
+\index{reset\+Bomb\+Key@{reset\+Bomb\+Key}!Player@{Player}}
+\subsubsection[{reset\+Bomb\+Key(int p)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+reset\+Bomb\+Key (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}\label{class_player_a3a45889c4b4bc78d219caed03dd04ec7}
+\hypertarget{class_player_ad470883cce200d3933fbf5c4ce6465a6}{}\index{Player@{Player}!run@{run}}
+\index{run@{run}!Player@{Player}}
+\subsubsection[{run()}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_ad470883cce200d3933fbf5c4ce6465a6}
+\hypertarget{class_player_a7ba0f4055816210ab2d9d665552e3a83}{}\index{Player@{Player}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!Player@{Player}}
+\subsubsection[{set\+Direction(int d)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+set\+Direction (
+\begin{DoxyParamCaption}
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)}\label{class_player_a7ba0f4055816210ab2d9d665552e3a83}
+\hypertarget{class_player_a8e246afb1a58320ee83182e774ee98fa}{}\index{Player@{Player}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!Player@{Player}}
+\subsubsection[{set\+State(int s)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+set\+State (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}\label{class_player_a8e246afb1a58320ee83182e774ee98fa}
+\hypertarget{class_player_a6169405e26100cc9d10e60d701171d14}{}\index{Player@{Player}!set\+X\+Pos@{set\+X\+Pos}}
+\index{set\+X\+Pos@{set\+X\+Pos}!Player@{Player}}
+\subsubsection[{set\+X\+Pos(int x)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+set\+X\+Pos (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\label{class_player_a6169405e26100cc9d10e60d701171d14}
+\hypertarget{class_player_a20babc9f961a026fcc7aaac5f8769be3}{}\index{Player@{Player}!set\+Y\+Pos@{set\+Y\+Pos}}
+\index{set\+Y\+Pos@{set\+Y\+Pos}!Player@{Player}}
+\subsubsection[{set\+Y\+Pos(int y)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+set\+Y\+Pos (
+\begin{DoxyParamCaption}
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{class_player_a20babc9f961a026fcc7aaac5f8769be3}
+\hypertarget{class_player_a3a9cccf5deb51d376068eb572c35a21b}{}\index{Player@{Player}!update\+Health@{update\+Health}}
+\index{update\+Health@{update\+Health}!Player@{Player}}
+\subsubsection[{update\+Health(int h)}]{\setlength{\rightskip}{0pt plus 5cm}void Player.\+update\+Health (
+\begin{DoxyParamCaption}
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\label{class_player_a3a9cccf5deb51d376068eb572c35a21b}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_player_a8e3ab9f7eed5d3b80be53d3b617d718b}{}\index{Player@{Player}!alive@{alive}}
+\index{alive@{alive}!Player@{Player}}
+\subsubsection[{alive}]{\setlength{\rightskip}{0pt plus 5cm}boolean Player.\+alive = true\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a8e3ab9f7eed5d3b80be53d3b617d718b}
+\hypertarget{class_player_ae8871f87983cdc59d20c9408b1db88af}{}\index{Player@{Player}!bomb\+Range@{bomb\+Range}}
+\index{bomb\+Range@{bomb\+Range}!Player@{Player}}
+\subsubsection[{bomb\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+bomb\+Range = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_ae8871f87983cdc59d20c9408b1db88af}
+\hypertarget{class_player_a43caa331c7c9f40c51862ad1ebb439ba}{}\index{Player@{Player}!direction@{direction}}
+\index{direction@{direction}!Player@{Player}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+direction = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a43caa331c7c9f40c51862ad1ebb439ba}
+\hypertarget{class_player_ab064f330cef84e2e062fd6446db24184}{}\index{Player@{Player}!health@{health}}
+\index{health@{health}!Player@{Player}}
+\subsubsection[{health}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+health = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_ab064f330cef84e2e062fd6446db24184}
+\hypertarget{class_player_acb502d33ffa4e20bd1d275126dc471ed}{}\index{Player@{Player}!max\+Bombs@{max\+Bombs}}
+\index{max\+Bombs@{max\+Bombs}!Player@{Player}}
+\subsubsection[{max\+Bombs}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+max\+Bombs = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_acb502d33ffa4e20bd1d275126dc471ed}
+\hypertarget{class_player_aa70e75b3cc209ea82a17c469de0f159c}{}\index{Player@{Player}!name@{name}}
+\index{name@{name}!Player@{Player}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}String Player.\+name = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_aa70e75b3cc209ea82a17c469de0f159c}
+\hypertarget{class_player_a497a7481dfd1f564d9cfcc45cc470e1f}{}\index{Player@{Player}!player\+Num@{player\+Num}}
+\index{player\+Num@{player\+Num}!Player@{Player}}
+\subsubsection[{player\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+player\+Num = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a497a7481dfd1f564d9cfcc45cc470e1f}
+\hypertarget{class_player_a961b7def0b24fdb72ded51d4bb15c6d0}{}\index{Player@{Player}!post\+Phase@{post\+Phase}}
+\index{post\+Phase@{post\+Phase}!Player@{Player}}
+\subsubsection[{post\+Phase}]{\setlength{\rightskip}{0pt plus 5cm}boolean Player.\+post\+Phase = false\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a961b7def0b24fdb72ded51d4bb15c6d0}
+\hypertarget{class_player_a73f30624033a23aa5bc290103528e77e}{}\index{Player@{Player}!state@{state}}
+\index{state@{state}!Player@{Player}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+state = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a73f30624033a23aa5bc290103528e77e}
+\hypertarget{class_player_a2b205a0aba33f0cd4a4b6bbb9b03df35}{}\index{Player@{Player}!timer@{timer}}
+\index{timer@{timer}!Player@{Player}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}Thread Player.\+timer\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a2b205a0aba33f0cd4a4b6bbb9b03df35}
+\hypertarget{class_player_ab6fd5604046c7ddee01bd5f9b9e69341}{}\index{Player@{Player}!used\+Bombs@{used\+Bombs}}
+\index{used\+Bombs@{used\+Bombs}!Player@{Player}}
+\subsubsection[{used\+Bombs}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+used\+Bombs = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_ab6fd5604046c7ddee01bd5f9b9e69341}
+\hypertarget{class_player_a280608b62fdcd7f31cb54cf0787cff7f}{}\index{Player@{Player}!x\+Pos@{x\+Pos}}
+\index{x\+Pos@{x\+Pos}!Player@{Player}}
+\subsubsection[{x\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+x\+Pos = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a280608b62fdcd7f31cb54cf0787cff7f}
+\hypertarget{class_player_aa2706c56cfb101d02b73e371cfb98cd1}{}\index{Player@{Player}!y\+Pos@{y\+Pos}}
+\index{y\+Pos@{y\+Pos}!Player@{Player}}
+\subsubsection[{y\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}int Player.\+y\+Pos = 0\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_aa2706c56cfb101d02b73e371cfb98cd1}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ren-\/\+David/workspace/bomber\+Clone/src/\hyperlink{_player_8java}{Player.\+java}\end{DoxyCompactItemize}

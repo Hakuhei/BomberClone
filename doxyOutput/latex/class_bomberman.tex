@@ -1,0 +1,251 @@
+\hypertarget{class_bomberman}{}\section{Bomberman Class Reference}
+\label{class_bomberman}\index{Bomberman@{Bomberman}}
+Inheritance diagram for Bomberman\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bomberman}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bomberman_a0390d82a8dbb54267eef4596cb204c1d}{Bomberman} ()
+\item 
+void \hyperlink{class_bomberman_a29623f557fafadd09713225a2f6e5d87}{game} ()
+\item 
+void \hyperlink{class_bomberman_aa89f0c27a218cccda9e512a45c1c099e}{key\+Pressed} (Key\+Event event)
+\item 
+void \hyperlink{class_bomberman_a20612b0e0b2e84367cf8d7f784fab962}{key\+Released} (Key\+Event event)
+\item 
+void \hyperlink{class_bomberman_a103d91b186f26b2da235de94f0c83f14}{key\+Typed} (Key\+Event event)
+\item 
+void \hyperlink{class_bomberman_a2987174569eb935f3fb627529eeab3ac}{paint\+Game} ()
+\item 
+void \hyperlink{class_bomberman_a64949794be90ca1f9c049b107df5eaa0}{update\+Positions} ()
+\item 
+void \hyperlink{class_bomberman_aba4bf2aeb30f417ba905dee10beedbb9}{check\+Collision} ()
+\item 
+void \hyperlink{class_bomberman_a3bf6f133b8c0769f51329598ed29b349}{load} ()
+\item 
+void \hyperlink{class_bomberman_a997783f87885a94d051fcb9a5a849f51}{load\+Map} ()
+\item 
+void \hyperlink{class_bomberman_a957817254c86d8afe45e7fd2b7c09b24}{check\+Win} ()
+\item 
+void \hyperlink{class_bomberman_ab0267c9e812ce043cb773db037ccd607}{new\+Game} ()
+\item 
+void \hyperlink{class_bomberman_ab8373491821d3b4a1cbe41da6b700c64}{create\+Players} ()
+\item 
+void \hyperlink{class_bomberman_a8bbca3ecf284c927ba263441a49574a4}{options} ()
+\item 
+void \hyperlink{class_bomberman_a91027bf5033c764e3cf0c445fd8bc0d2}{rules} ()
+\item 
+void \hyperlink{class_bomberman_aac15074008f535fa531f0182ff5bbe23}{controls} ()
+\item 
+void \hyperlink{class_bomberman_a050561732a7d0e53daa9980a1dbbcbe7}{credits} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_bomberman_ab69de0e48af8d28ac2e9bdb58b7074ba}{main} (String\mbox{[}$\,$\mbox{]} args)
+\item 
+static void \hyperlink{class_bomberman_a54fc0c6fdcd64345d6dedf0afdd7310d}{change\+Sprites} (int n, int p)
+\item 
+static void \hyperlink{class_bomberman_a1f05f0b836a62ece2b3a05ae50f4c8f7}{initialize} (int players, int bomb\+Limit, int bomb\+Distance, int lives, String map\+Name, String\mbox{[}$\,$\mbox{]} player\+Names)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Buffer\+Strategy \hyperlink{class_bomberman_a4417f01e97678b10237787d6de283d1c}{bs}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{class_bomberman_a7730b9bf04c6b3bb99edc89e93c13f6c}{W\+I\+D\+T\+H} = 850
+\item 
+static final int \hyperlink{class_bomberman_acb62777e7ad1e7ba18391ce66ef5b1e2}{H\+E\+I\+G\+H\+T} = 678
+\item 
+static final int \hyperlink{class_bomberman_a0459d0744420f2371539f445df243505}{S\+P\+E\+E\+D} = 10
+\item 
+static final int \hyperlink{class_bomberman_ab3f0863e5f567dc7bfc24cd3ef53d8e0}{V\+E\+L\+O\+C\+I\+T\+Y} = 50
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ren-\/\+David This is the bomberman class 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_bomberman_a0390d82a8dbb54267eef4596cb204c1d}{}\index{Bomberman@{Bomberman}!Bomberman@{Bomberman}}
+\index{Bomberman@{Bomberman}!Bomberman@{Bomberman}}
+\subsubsection[{Bomberman()}]{\setlength{\rightskip}{0pt plus 5cm}Bomberman.\+Bomberman (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a0390d82a8dbb54267eef4596cb204c1d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_bomberman_a54fc0c6fdcd64345d6dedf0afdd7310d}{}\index{Bomberman@{Bomberman}!change\+Sprites@{change\+Sprites}}
+\index{change\+Sprites@{change\+Sprites}!Bomberman@{Bomberman}}
+\subsubsection[{change\+Sprites(int n, int p)}]{\setlength{\rightskip}{0pt plus 5cm}static void Bomberman.\+change\+Sprites (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_a54fc0c6fdcd64345d6dedf0afdd7310d}
+\hypertarget{class_bomberman_aba4bf2aeb30f417ba905dee10beedbb9}{}\index{Bomberman@{Bomberman}!check\+Collision@{check\+Collision}}
+\index{check\+Collision@{check\+Collision}!Bomberman@{Bomberman}}
+\subsubsection[{check\+Collision()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+check\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_aba4bf2aeb30f417ba905dee10beedbb9}
+\hypertarget{class_bomberman_a957817254c86d8afe45e7fd2b7c09b24}{}\index{Bomberman@{Bomberman}!check\+Win@{check\+Win}}
+\index{check\+Win@{check\+Win}!Bomberman@{Bomberman}}
+\subsubsection[{check\+Win()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+check\+Win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a957817254c86d8afe45e7fd2b7c09b24}
+\hypertarget{class_bomberman_aac15074008f535fa531f0182ff5bbe23}{}\index{Bomberman@{Bomberman}!controls@{controls}}
+\index{controls@{controls}!Bomberman@{Bomberman}}
+\subsubsection[{controls()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+controls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_aac15074008f535fa531f0182ff5bbe23}
+\hypertarget{class_bomberman_ab8373491821d3b4a1cbe41da6b700c64}{}\index{Bomberman@{Bomberman}!create\+Players@{create\+Players}}
+\index{create\+Players@{create\+Players}!Bomberman@{Bomberman}}
+\subsubsection[{create\+Players()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+create\+Players (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_ab8373491821d3b4a1cbe41da6b700c64}
+\hypertarget{class_bomberman_a050561732a7d0e53daa9980a1dbbcbe7}{}\index{Bomberman@{Bomberman}!credits@{credits}}
+\index{credits@{credits}!Bomberman@{Bomberman}}
+\subsubsection[{credits()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+credits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a050561732a7d0e53daa9980a1dbbcbe7}
+\hypertarget{class_bomberman_a29623f557fafadd09713225a2f6e5d87}{}\index{Bomberman@{Bomberman}!game@{game}}
+\index{game@{game}!Bomberman@{Bomberman}}
+\subsubsection[{game()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a29623f557fafadd09713225a2f6e5d87}
+\hypertarget{class_bomberman_a1f05f0b836a62ece2b3a05ae50f4c8f7}{}\index{Bomberman@{Bomberman}!initialize@{initialize}}
+\index{initialize@{initialize}!Bomberman@{Bomberman}}
+\subsubsection[{initialize(int players, int bomb\+Limit, int bomb\+Distance, int lives, String map\+Name, String[] player\+Names)}]{\setlength{\rightskip}{0pt plus 5cm}static void Bomberman.\+initialize (
+\begin{DoxyParamCaption}
+\item[{int}]{players, }
+\item[{int}]{bomb\+Limit, }
+\item[{int}]{bomb\+Distance, }
+\item[{int}]{lives, }
+\item[{String}]{map\+Name, }
+\item[{String\mbox{[}$\,$\mbox{]}}]{player\+Names}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_a1f05f0b836a62ece2b3a05ae50f4c8f7}
+\hypertarget{class_bomberman_aa89f0c27a218cccda9e512a45c1c099e}{}\index{Bomberman@{Bomberman}!key\+Pressed@{key\+Pressed}}
+\index{key\+Pressed@{key\+Pressed}!Bomberman@{Bomberman}}
+\subsubsection[{key\+Pressed(\+Key\+Event event)}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+key\+Pressed (
+\begin{DoxyParamCaption}
+\item[{Key\+Event}]{event}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_aa89f0c27a218cccda9e512a45c1c099e}
+\hypertarget{class_bomberman_a20612b0e0b2e84367cf8d7f784fab962}{}\index{Bomberman@{Bomberman}!key\+Released@{key\+Released}}
+\index{key\+Released@{key\+Released}!Bomberman@{Bomberman}}
+\subsubsection[{key\+Released(\+Key\+Event event)}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+key\+Released (
+\begin{DoxyParamCaption}
+\item[{Key\+Event}]{event}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a20612b0e0b2e84367cf8d7f784fab962}
+\hypertarget{class_bomberman_a103d91b186f26b2da235de94f0c83f14}{}\index{Bomberman@{Bomberman}!key\+Typed@{key\+Typed}}
+\index{key\+Typed@{key\+Typed}!Bomberman@{Bomberman}}
+\subsubsection[{key\+Typed(\+Key\+Event event)}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+key\+Typed (
+\begin{DoxyParamCaption}
+\item[{Key\+Event}]{event}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a103d91b186f26b2da235de94f0c83f14}
+\hypertarget{class_bomberman_a3bf6f133b8c0769f51329598ed29b349}{}\index{Bomberman@{Bomberman}!load@{load}}
+\index{load@{load}!Bomberman@{Bomberman}}
+\subsubsection[{load()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a3bf6f133b8c0769f51329598ed29b349}
+\hypertarget{class_bomberman_a997783f87885a94d051fcb9a5a849f51}{}\index{Bomberman@{Bomberman}!load\+Map@{load\+Map}}
+\index{load\+Map@{load\+Map}!Bomberman@{Bomberman}}
+\subsubsection[{load\+Map()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+load\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a997783f87885a94d051fcb9a5a849f51}
+\hypertarget{class_bomberman_ab69de0e48af8d28ac2e9bdb58b7074ba}{}\index{Bomberman@{Bomberman}!main@{main}}
+\index{main@{main}!Bomberman@{Bomberman}}
+\subsubsection[{main(\+String[] args)}]{\setlength{\rightskip}{0pt plus 5cm}static void Bomberman.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_ab69de0e48af8d28ac2e9bdb58b7074ba}
+\hypertarget{class_bomberman_ab0267c9e812ce043cb773db037ccd607}{}\index{Bomberman@{Bomberman}!new\+Game@{new\+Game}}
+\index{new\+Game@{new\+Game}!Bomberman@{Bomberman}}
+\subsubsection[{new\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+new\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_ab0267c9e812ce043cb773db037ccd607}
+\hypertarget{class_bomberman_a8bbca3ecf284c927ba263441a49574a4}{}\index{Bomberman@{Bomberman}!options@{options}}
+\index{options@{options}!Bomberman@{Bomberman}}
+\subsubsection[{options()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a8bbca3ecf284c927ba263441a49574a4}
+\hypertarget{class_bomberman_a2987174569eb935f3fb627529eeab3ac}{}\index{Bomberman@{Bomberman}!paint\+Game@{paint\+Game}}
+\index{paint\+Game@{paint\+Game}!Bomberman@{Bomberman}}
+\subsubsection[{paint\+Game()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+paint\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a2987174569eb935f3fb627529eeab3ac}
+\hypertarget{class_bomberman_a91027bf5033c764e3cf0c445fd8bc0d2}{}\index{Bomberman@{Bomberman}!rules@{rules}}
+\index{rules@{rules}!Bomberman@{Bomberman}}
+\subsubsection[{rules()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+rules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a91027bf5033c764e3cf0c445fd8bc0d2}
+\hypertarget{class_bomberman_a64949794be90ca1f9c049b107df5eaa0}{}\index{Bomberman@{Bomberman}!update\+Positions@{update\+Positions}}
+\index{update\+Positions@{update\+Positions}!Bomberman@{Bomberman}}
+\subsubsection[{update\+Positions()}]{\setlength{\rightskip}{0pt plus 5cm}void Bomberman.\+update\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_bomberman_a64949794be90ca1f9c049b107df5eaa0}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_bomberman_a4417f01e97678b10237787d6de283d1c}{}\index{Bomberman@{Bomberman}!bs@{bs}}
+\index{bs@{bs}!Bomberman@{Bomberman}}
+\subsubsection[{bs}]{\setlength{\rightskip}{0pt plus 5cm}Buffer\+Strategy Bomberman.\+bs}\label{class_bomberman_a4417f01e97678b10237787d6de283d1c}
+\hypertarget{class_bomberman_acb62777e7ad1e7ba18391ce66ef5b1e2}{}\index{Bomberman@{Bomberman}!H\+E\+I\+G\+H\+T@{H\+E\+I\+G\+H\+T}}
+\index{H\+E\+I\+G\+H\+T@{H\+E\+I\+G\+H\+T}!Bomberman@{Bomberman}}
+\subsubsection[{H\+E\+I\+G\+H\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int Bomberman.\+H\+E\+I\+G\+H\+T = 678\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_acb62777e7ad1e7ba18391ce66ef5b1e2}
+\hypertarget{class_bomberman_a0459d0744420f2371539f445df243505}{}\index{Bomberman@{Bomberman}!S\+P\+E\+E\+D@{S\+P\+E\+E\+D}}
+\index{S\+P\+E\+E\+D@{S\+P\+E\+E\+D}!Bomberman@{Bomberman}}
+\subsubsection[{S\+P\+E\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}final int Bomberman.\+S\+P\+E\+E\+D = 10\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_a0459d0744420f2371539f445df243505}
+\hypertarget{class_bomberman_ab3f0863e5f567dc7bfc24cd3ef53d8e0}{}\index{Bomberman@{Bomberman}!V\+E\+L\+O\+C\+I\+T\+Y@{V\+E\+L\+O\+C\+I\+T\+Y}}
+\index{V\+E\+L\+O\+C\+I\+T\+Y@{V\+E\+L\+O\+C\+I\+T\+Y}!Bomberman@{Bomberman}}
+\subsubsection[{V\+E\+L\+O\+C\+I\+T\+Y}]{\setlength{\rightskip}{0pt plus 5cm}final int Bomberman.\+V\+E\+L\+O\+C\+I\+T\+Y = 50\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_ab3f0863e5f567dc7bfc24cd3ef53d8e0}
+\hypertarget{class_bomberman_a7730b9bf04c6b3bb99edc89e93c13f6c}{}\index{Bomberman@{Bomberman}!W\+I\+D\+T\+H@{W\+I\+D\+T\+H}}
+\index{W\+I\+D\+T\+H@{W\+I\+D\+T\+H}!Bomberman@{Bomberman}}
+\subsubsection[{W\+I\+D\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}final int Bomberman.\+W\+I\+D\+T\+H = 850\hspace{0.3cm}{\ttfamily [static]}}\label{class_bomberman_a7730b9bf04c6b3bb99edc89e93c13f6c}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Ren-\/\+David/workspace/bomber\+Clone/src/\hyperlink{_bomberman_8java}{Bomberman.\+java}\end{DoxyCompactItemize}

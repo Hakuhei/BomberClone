@@ -1,0 +1,273 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\title{\textbf{Module Interface Specification for Bomber Clone Application \\ \Large Software Engineering 3XA3: Project}}
+\author{Group 12 - The A Team \\Gabriel Lopez De Leon, 1310514\\Ren-David Dimen, 1222679\\Jay Nguyen, 1327828}
+\date{06 November 2015}
+
+\renewcommand*\contentsname{Table of Contents}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\clearpage\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	
+	\section{Revision History}
+	
+	\begin{tabular}{ |c|c|c|c| } 
+		\hline
+		\textbf{Revision \#} & \textbf{Revision Date} & \textbf{Description of Change} & \textbf{Author}\\
+		\hline
+		2 & Nov 05 2015 & Complete MIS & Gabriel Lopez de Leon\\
+		\hline
+		1 & Nov 05 2015 & Create MIS Outline & Gabriel Lopez de Leon\\
+		\hline
+	\end{tabular}
+	
+	\newpage
+	
+	\section{Introduction}
+	
+	\indent \indent The following document is for the Module Interface Specifications for the various implemented modules in the Bomber Clone application. It is intended to aid in the software development process by making navigation through the program, with regards to design and maintenance, easier. Note that this document may reference the SRS and the Module Guide.
+	
+	\section{Module Hierarchy}
+	
+	The following table is taken directly from the Module Guide for this project.
+	
+		\begin{center}
+			\begin{tabular}{ p{6cm} p{4cm} p{4cm}  }
+				\hline
+				\textbf{Level 1} & \textbf{Level 2} & \\ 
+				\hline
+				Hardware-Hiding Module \\ 
+				\hline 
+				Behaviour-Hiding Module & Screen Module &   \\ 
+				& Sprite Module & \\
+				& SpriteSheet Module & \\
+				& Keyboard Module & \\
+				& Player Module & \\
+				
+				\hline
+				Software Decision Module & CollisionTest Module &   \\ 
+				\hline
+				
+			\end{tabular}				
+			\footnotesize Table 1: Module Hierarchy
+		\end{center}
+	
+	\section{MIS of Screen Module}
+	
+	\subsection{Exported Access Programs}
+	
+		\begin{center}
+			\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+				\hline
+				\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+				\hline
+				Screen & int, int & - & -  \\
+				renderPlayer & int, int, Sprite & - & -  \\ 
+				\hline  
+				
+			\end{tabular}				
+		\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	width : int \\
+	height : int \\
+	pixels : array of int \\
+	tiles : array of int \\
+	
+	
+	\subsubsection{Environment Variables}
+	
+	\subsubsection{Assumption}
+	
+	\indent \indent Screen will be called in the BomberGame constructor which will be initialized in the main class of the game. Screen will be used to set the display for the game when the program is run.
+	
+	\subsubsection{Access Program Semantics}
+	
+	Screen: is used to initialize the size of the screen (output display) and then \indent sets its color to black. It takes in two parameters width and height which \indent is used set the screen size.\\
+	
+	\noindent renderPlayer: takes input of two integers to set the size of the player and a \indent Sprite which will be what the player looks like. This function is used to \indent draw the player on to the screen.\\
+	
+	
+	\section{MIS of Sprite Module}
+	
+	\subsection{Exported Access Programs}
+	
+			\begin{center}
+				\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+					\hline
+					\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+					\hline
+					Sprite & int, int, int, SpriteSheet & - & -  \\ 
+					\hline
+					
+				\end{tabular}				
+			\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	SIZE : int \\
+	x : int \\
+	y : int \\
+	pixels : array of int \\
+	
+	\subsubsection{Environment Variables}
+	
+	\subsubsection{Assumption}
+	
+	\subsubsection{Access Program Semantics}
+	
+	Sprite: Constructor of the Sprite Class, this creates an object of type Sprite \indent given an input size, the sprite sheet to be used.\\
+	
+	\section{MIS of SpriteSheet Module}
+	
+	\subsection{Exported Access Programs}
+	
+			\begin{center}
+				\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+					\hline
+					\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+					\hline
+					SpriteSheet & int, String & - & -  \\ 
+					\hline
+					
+				\end{tabular}				
+			\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	SIZE : int \\
+	pixels : array of int \\
+	
+	\subsubsection{Environment Variables}
+	
+	path : String which is used to tell the system the path to the sprite sheet \indent being used\\
+	
+	\subsubsection{Assumption}
+	
+	\subsubsection{Access Program Semantics}
+	
+	SpriteSheet: Constructor of the SpriteSheet class, this sets the path to the \indent desired sprite sheet, sets its size and loads it to be used.\\
+	
+	\section{MIS of Keyboard Module}
+	
+	\subsection{Exported Access Programs}
+	
+			\begin{center}
+				\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+					\hline
+					\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+					\hline
+					Keyboard & int & - & -  \\ 
+					keyPressed & KeyEvent & - & -  \\  
+					keyReleased & KeyEvent & - & - \\
+					\hline
+					
+					
+				\end{tabular}				
+			\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	playerNum : int \\
+	keys : array of boolean \\
+	
+	\subsubsection{Environment Variables}
+	
+	VK\_(UP/DOWN/LEFT/RIGHT/ENTER) : KeyEvent for player 1 controls\\
+	VK\_(W/S/A/D/G) : KeyEvent used for player 2 controls\\
+	
+	\subsubsection{Assumption}
+	
+	\subsubsection{Access Program Semantics}
+	
+	Keyboard: takes in a parameter for the player number (integer) and is used \indent to initiate a keyboard for that player.\\
+	keyPressed: function to check if a key is pressed down while setting the \indent boolean for the specified key that was pressed to true.\\
+	keyReleased: function to check if a key is released after having been pressed \indent while also setting the boolean for the specified key that was released to \indent false.\\
+	
+	\section{MIS of Player Module}
+	
+	\subsection{Exported Access Programs}
+	
+			\begin{center}
+				\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+					\hline
+					\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+					\hline
+					Player & int, int, Keyboard & - & -  \\ 
+					render & Screen & - & - \\
+					\hline
+					
+				\end{tabular}				
+			\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	x : int \\
+	y : int \\
+	bombBag : int \\
+	speed : int \\
+	
+	\subsubsection{Environment Variables}
+	
+	\subsubsection{Assumption}
+	
+	\subsubsection{Access Program Semantics}
+	
+	Player: is a function which sets the initial size of the player and chooses \indent the initial sprite to display. Furthermore, it takes an input of a keyboard \indent which will be used to set key controls for that player.\\
+	render: takes in a parameter screen which then uses to display the player on \indent to the specified screen.\\
+	
+	\section{MIS of CollisionTest Module}
+	
+	\subsection{Exported Access Programs}
+	Note: the CollisionTest is not yet complete, thus the exported access programs table cannot be filled out.
+			\begin{center}
+				\begin{tabular}{ p{4cm} p{3cm} p{3cm} p{4cm} }
+					\hline
+					\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\ 
+					\hline
+					- & - & - & -  \\ 
+					\hline
+					
+				\end{tabular}				
+			\end{center}
+	
+	\subsection{Interface Semantics}
+	
+	\subsubsection{State Variables}
+	
+	pixels : array of int \\
+	x : int \\
+	y : int \\
+	
+	\subsubsection{Environment Variables}
+	
+	\subsubsection{Assumption}
+	
+	\subsubsection{Access Program Semantics}
+	
+\end{document}

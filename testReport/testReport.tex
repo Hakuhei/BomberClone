@@ -1,0 +1,236 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pifont}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\title{\textbf{Test Report for Bomber Clone Application \\ \Large Software Engineering 3XA3: Project}}
+\author{Group 12 - The A Team \\Gabriel Lopez De Leon, 1310514\\Ren-David Dimen, 1222679\\Jay Nguyen, 1327828}
+\date{27 November 2015}
+
+\renewcommand*\contentsname{Table of Contents}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\clearpage\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	
+\section{Revision History}
+	\begin{tabular}{ |c|c|c|c| } 
+		\hline
+		\textbf{Revision \#} & \textbf{Revision Date} & \textbf{Description of Change} & \textbf{Author}\\
+		\hline
+		4 & Nov 27 2015 & Complete Remaining Sections & Gabriel Lopez de Leon\\
+		\hline
+		3 & Nov 27 2015 & Complete Section 4, 6, 7, 8 & Gabriel Lopez de Leon\\
+		\hline
+		2 & Nov 24 2015 & Add Section 1, 2, and 4 & Gabriel Lopez de Leon\\
+		\hline
+		1 & Nov 24 2015 & Create Document Outline & Gabriel Lopez de Leon\\
+		\hline
+	\end{tabular}
+	\newpage
+	
+\section{Introduction}
+\indent \indent This section provides an overview of the testing completed for our project, the results obtained from the testing and the relevance of each test is described in detail in this document.
+\subsection{Purpose of the Document}
+\indent \indent This document is used to provide a trace to all the testing that was done during the implementation of our Bomberman game, and the relevance and need for each test. The test report also provides evidence that testing was done to improve the quality of our program and ensure there are minimal bugs.
+\subsection{Scope of the Testing}
+\indent \indent This test report contains test cases for both front and back end of the applications. The various types of tests performed include unit tests such as the use of JUnit (through the Eclipse IDE) and system tests. These various test will either be automated or manual and will consist of both black box and white box tests, depending on the functionality which is being tested.
+\subsection{Organization of the Document}
+\indent \indent  The remainder of the document contains eight major sections which consists of a list of all the figures and tables within the document, component testing, nonfunctional qualities evaluation, changes due to testing, automated testing, system test results, a trace to the requirements, and a trace to the modules. The nonfunctional qualities evaluation is divided into three parts, usability, performance, robustness. Each of these sections will be divided into the various different test cases which will detail their results and relevance.
+
+\section{List of Figures and Tables}
+	\begin{center}
+		\begin{tabular}{ p{3cm} p{5cm} p{4cm}  }
+			\hline
+			\textbf{Figure \#} & \textbf{Name} & \textbf{Page \#} \\ 
+			\hline 
+			Table 1 & Trace to Requirements & Page 12\\
+			\hline
+		\end{tabular}				
+	\end{center}
+
+\section{Components Testing}
+\indent \indent This section shows the reader all the different test cases that were done for each of the subsections below while also providing a short summary and type of test used.
+\subsection{Game State Testing (C1)}
+\textbf{Testing Type:} Unit Test, Black Box Test, Automated.\\
+\noindent \textbf{Tools Used:} JUnit using the Eclipse IDE.\\
+\noindent \textbf{Summary:} Unit test to check if a player is alive or not because once a player is dead, the game stops updating and ends. In addition, if the timer reaches zero, the game should also end.\\
+\noindent \textbf{Sample Inputs:} Set player isAlive equal to false and check to see if the game ends.\\
+\noindent \textbf{Test Case:} \\ 
+
+//Game should not be running when a player is dead\\
+\indent Game game = new Game();\\
+\indent game.start();\\
+\indent game.player.setPlayerAlive(false);\\
+\indent game.update();\\
+\indent assertEquals(game.getRunning(),false);\\
+
+//Game should be running when players are alive\\
+\indent Game game = new Game();\\
+\indent game.start();\\
+\indent assertEquals(game.getRunning(),true);\\
+
+Arena arena = game.getArena();\\
+\indent int[] tiles = arena.getTiles();\\
+\indent int width = arena.getWidth();\\
+
+// Checks collisions\\
+\indent for (int x = 0; x < 15; x++)\{\\
+\indent \indent for (int y = 0; y < 9; y++)\{\\
+\indent \indent \indent game.player = new Player(x,y,game.getInput(),arena);\\
+\indent \indent \indent assertEquals(game.player.tileCollision(0,0),arena.getTile(x, y).solid());\\
+\indent \indent \}\\
+\indent \}\\
+
+// Goes through all tiles and checks if they match given arena\\
+\indent for (int x = 0; x < 15; x++)\{\\
+\indent \indent for (int y = 0; y < 9; y++)\{\\
+\indent \indent \indent if (tiles[x+y*width] ==  0xFF000000)\{\\
+\indent \indent \indent \indent assertEquals(arena.getTile(x,y),Tile.steelTile);\\
+\indent \indent \indent \} else if (tiles[x+y*width] ==  0xFF00FF00) \{\\
+\indent \indent \indent \indent assertEquals(arena.getTile(x,y),Tile.rockTile);\\
+\indent \indent \indent \} else if (tiles[x+y*width] ==  0xFFFFFFFF)\{\\
+\indent \indent \indent \indent assertEquals(arena.getTile(x,y),Tile.grassTile);\\
+\indent \indent \indent \}\\
+\indent \indent \}\\
+\indent \}\\
+
+// Checks broken brick states\\
+\indent for (int x = 0; x < 15; x++)\{\\
+\indent \indent for (int y = 0; y < 9; y++)\{\\
+\indent \indent \indent arena.rockX.add(x);\\
+\indent \indent \indent arena.rockY.add(y);\\
+\indent \indent \indent assertEquals(arena.getTile(x, y),Tile.grassTile);\\
+\indent \indent \}\\
+\indent \}\\
+
+\subsection{Game Timer Testing (C2)}
+\textbf{Testing Type:} Unit Test, Black Box Test, Automated.\\
+\noindent \textbf{Tools Used:} JUnit using the Eclipse IDE.\\
+\noindent \textbf{Summary:} Unit test to check if the timer is running and that it stops when it hits zero.\\
+\noindent \textbf{Sample Inputs:} Loop through all timer states (in our case 180 seconds) to ensure it is running up until the timer is zero.\\
+\noindent \textbf{Test Case:} \\ 
+
+//Game should be running when timer is greater than zero\\
+\indent for (int i = 180; i > 0; i--)\{\\
+\indent game.start();\\
+\indent game.setGameTimer(180);\\
+\indent game.update();\\
+\indent assertEquals(game.getRunning(),true);\\
+\indent game.stop();\\
+\indent \}\\
+
+//Game should not be running when timer equals zero\\
+\indent game.start();\\
+\indent game.setGameTimer(0);\\
+\indent game.update();\\
+\indent assertEquals(game.getRunning(),false);\\
+
+\subsection{Arena Testing (C3)}
+\textbf{Testing Type:} Unit Test, Black Box Test, Manual.\\
+\noindent \textbf{Summary:} Test to check for a variety of different arena layout options.\\
+\noindent \textbf{Sample Inputs:} Different sprite sheets for the various arena layouts.\\
+\noindent \textbf{Test Case:} Manual Tests for this case would simply be to run the game numerous times as a random arena layout is chosen when the game first starts.
+
+\subsection{User Input Testing (C4)}
+\textbf{Testing Type:} Unit Test, White Box Test, Manual.\\
+\noindent \textbf{Summary:} Test to check if the game allows for multiple user inputs.\\
+\noindent \textbf{Sample Inputs:} Keyboard inputs by the players.\\
+\noindent \textbf{Test Case:} This test case also uses manual, black box testing and can be achieved by making two users attempt to play the game at the same time. If the game accepts the inputs from both users at the same time then the test would pass.
+
+\section{Nonfunctional Qualities Evaluation} %For each section if no test is performed, justify reasoning for not testing.
+\subsection{Usability}
+\subsubsection{Game State Testing}
+\indent \indent Though most of the test cases for game state addressed functional requirements, the usability for game state functions was tested by team members and other students who played and tested the game. A group of students were chosen to play our game and test out its functionality. With respect to usability, the ease of use and learning was shown by how fast other users where able to quickly play our game.
+\subsubsection{Game Timer Testing}
+\indent \indent Similar to Game State Testing, game timer functions are functional requirements and was tested by a variety of people who used our program and provided feedback. The timer itself runs automatically once the game begins and ends the game when it reaches zero. Users do not interact with the timer at all.
+\subsubsection{Arena Testing}
+\indent \indent The randomized map layout is also a functional requirement and is tested every time someone plays our game since the function which randomizes the arena layout is called when the game starts.
+\subsubsection{User Input Testing}
+\indent \indent Usability of user input functions was tested by a number of students chosen to play our game. After they played the game, they were asked for feedback on how well the system accepted inputs from both players playing at once and if the controls were easy to learn/use. 
+\subsection{Performance}
+\subsubsection{Game State Testing}
+\indent \indent The JUnit library provides results on time performance which is displayed after the test file is run. The average time to run the test file is 0.187 seconds which is considerably fast. Other performance requirements for the game states include reliability and availability. The game can be run at any time; when the Java file is run, the game begins without any errors. Furthermore, hit collisions and block/tile rendering is consistent as shown through numerous test runs of playing the game.
+\subsubsection{Game Timer Testing}
+\indent \indent The JUnit tests for the game timer are in the same test file as the tests for game state, and thus share the same test file runtime. The game timer shows reliability by counting down through all timer states and eventually reaching zero.
+\subsubsection{Arena Testing}
+\indent \indent Manual test for the arena functions tested for reliability requirements as it is an important aspect which adds some variety to the game. Arena functions meet reliability requirements as the game properly randomizes the arena layout at the program launch time.
+\subsubsection{User Input Testing}
+\indent \indent Manual tests for the user input mostly focused on reliability and capacity as the system should always accept user inputs consistently while also allowing for two players to play the game simultaneously.
+\subsection{Robustness}
+\subsubsection{Game State Testing}
+\indent \indent Robustness of the various game state functions where tested by ensuring to check for all possible collisions, make sure the game ends when it should (either a player wins or timer runs out) and also tests to make sure the arena was rendered properly by going through each block to check.
+\subsubsection{Game Timer Testing}
+\indent \indent There were no robustness tests for the game timer as it is a simple function which accomplished its task consistently as shown through the other test cases.
+\subsubsection{Arena Testing}
+\indent \indent The system only takes in the set sprite sheet for the different arena layouts and are linked to the code by its specific path and location in the workspace folders.
+\subsubsection{User Input Testing}
+\indent \indent Only designated keyboard inputs are accepted by the system, if other buttons are pressed, nothing happens. The system only checks for the arrow keys and enter button for player one, and checks for a,w,s,d,g keys for player two controls.
+
+\section{Changes Due to Testing} 
+\indent \indent There were no changes to testing in terms of core code or functionality of any of the modules. Only minor changes such as the names of some variables, methods and classes were changed to match up with the test plan. The addition of getter and setter functions were also added to be able to test using JUnit in Eclipse.
+%Changes made to the program in response to testing
+
+\section{Automated Testing} %Explain use of automated testing, if it was not used then explain why it was not feasible for this project
+\subsection{Game State Testing}
+\indent \indent All tests for the Game State were automated in Java in "GameTesting.Java" using JUnit through the Eclipse IDE. Running this Java test file will automatically run all the tests and output the results in real time in the JUnit console.
+\subsection{Game Timer Testing}
+\indent \indent Similar to Game State Testing, Game Timer Testing was fully automated in the Java file "GameTesting.Java" which was run through JUnit on the Eclipse IDE. The test file runs a test case which checks if the timer for the game accomplishes its task properly. The results of this test will also be shown on the JUnit console.
+\subsection{Arena Testing}
+\indent \indent The various possible arena layouts was tested manually as it was not necessary to run automated tests to check if a random map layout is chosen when the game starts. Instead, the game was run multiple times to see if the arena layout was chosen at random at the beginning of each game. This test case models testing by induction, if the game changes the layout a few times and successfully reads the various arena sprite sheets, then it should work for all other arena layouts.
+\subsection{User Input Testing}
+\indent \indent User Input was also tested manually and is one of the easier cases to test. A simple test for this is to see if two players can play simultaneously and the game accepts inputs from both players.
+
+\section{System Test Results}
+\subsection{Game State Testing}
+\indent \indent There are 5 different test cases which check different game states and functionality. These tests are all automated through JUnit in the Eclipse IDE and have all had positive results. These various tests include checking if the game is running when both players are alive, or if the game is not running when a player dies. It also checks for broken brick states to ensure a block was removed, and checks if the tiles displayed matches the arena layout that was selected. Lastly, there is a test case which checks through all the possible collisions in the game. Aside from the automated tests conducted through JUnit, manual tests can also be applied to this case by playing through the game and saying if the game meets the main functional requirements.
+\subsection{Game Timer Testing}
+\indent \indent There are currently two test cases for the game timer, one to make sure the timer is continuously running while it is greater than zero. The other test case checks to see if the timer stops when it reaches zero. These two tests were both automated through JUnit and passed with results being that the timer counts down from its initial value of 180 seconds to zero and then stops. Other tests which relate to this case would be instances when the game is played as the timer runs during gameplay and ends the game when it hits zero.
+\subsection{Arena Testing}
+\indent \indent This test case was mostly manually tested, besides a test to check the arena layout which was done in the game state testing, a large number of manual tests were run for this test case. The game has been run multiple times by each member of the group to test for the randomness of arena layout. Furthermore, when the game is run to test other aspects, this case is also being tested as it occurs every time the game is played. Other users have also been asked to try our game which further adds to the number of tests run for this specific test case. The results of these tests have been positive, the game meets the requirement of randomizing the map layout.
+\subsection{User Input Testing}
+\indent \indent As user input testing has been tested manually, there is not much variety in the number of ways to test this functionality. However, like arena testing, a large number of tests were run for this case. By playing the game multiple times with two player, we have tested how the system accepts two inputs at once. The results for this were positive and the game accepts the inputs with ease.
+
+\section{Trace to Requirements}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+	\hline
+	\textbf{Test Cases} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} \\
+	\hline 
+	\textbf{Requirements} & Game State & Game Timer & Arena & User Input\\
+	\hline
+	\textbf{R1} & \ding{51} & - & - & - \\
+	\hline 
+	\textbf{R2} & - & \ding{51} & - & - \\
+	\hline 
+	\textbf{R3} & - & - & \ding{51} & -\\
+	\hline 
+	\textbf{R4} & - & - & - & \ding{51}\\
+	\hline 
+\end{tabular}\\
+\footnotesize Table 1: Trace to Requirements
+\end{center}
+
+\section{Trace to Modules}
+\subsection{Game State Testing}
+\indent \indent The various game state tests trace back to different modules, depending on the specific test that was conducted through JUnit. For the tests that checked if the game was running or not, a trace to the player module can be made. For the testing of collisions, the both the player and collision modules were used.
+The test case to check if all tiles match the given arena can be traced to the tile module under the tiles package in the project workspace.
+\subsection{Game Timer Testing}
+\indent \indent The JUnit test cases for game timer both trace back to the main module, game.Java. This is module is where all of the timer code is handled.
+\subsection{Arena Testing}
+\indent \indent Tests for arena can be traced back to the arena module which handles the randomized layout of the map upon game launch.
+\subsection{User Input Testing}
+\indent \indent Test cases for user inputs can be traced back to the player and keyboard modules which set the controls for player movements.
+\end{document}

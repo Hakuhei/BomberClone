@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}Revision History}{3}
+\contentsline {section}{\numberline {2}General Information}{4}
+\contentsline {subsection}{\numberline {2.1}Introduction}{4}
+\contentsline {subsection}{\numberline {2.2}Test Plan Identifier}{4}
+\contentsline {subsection}{\numberline {2.3}Key Terms, Acronyms, and Abbreviations}{4}
+\contentsline {subsection}{\numberline {2.4}References}{5}
+\contentsline {section}{\numberline {3}Test Items}{5}
+\contentsline {subsection}{\numberline {3.1}Functional Requirements}{5}
+\contentsline {subsection}{\numberline {3.2}Non-Functional Requirements}{6}
+\contentsline {section}{\numberline {4}Plan}{6}
+\contentsline {subsection}{\numberline {4.1}Software Description}{6}
+\contentsline {subsection}{\numberline {4.2}Test Team}{6}
+\contentsline {subsection}{\numberline {4.3}Milestones}{7}
+\contentsline {subsubsection}{\numberline {4.3.1}Location}{7}
+\contentsline {subsubsection}{\numberline {4.3.2}Dates and Deadlines}{7}
+\contentsline {subsection}{\numberline {4.4}Budget}{7}
+\contentsline {section}{\numberline {5}Software Risk Issues}{7}
+\contentsline {section}{\numberline {6}Features To Be Tested}{8}
+\contentsline {section}{\numberline {7}Features Not To Be Tested}{9}
+\contentsline {section}{\numberline {8}Approach}{9}
+\contentsline {subsection}{\numberline {8.1}Test Tools}{9}
+\contentsline {subsection}{\numberline {8.2}Meetings}{9}
+\contentsline {subsection}{\numberline {8.3}Testing Levels}{10}
+\contentsline {subsubsection}{\numberline {8.3.1}Types of Tests}{10}
+\contentsline {subsubsection}{\numberline {8.3.2}Game State Testing}{10}
+\contentsline {subsubsection}{\numberline {8.3.3}Player State Testing}{11}
+\contentsline {subsubsection}{\numberline {8.3.4}General Functionality}{11}
+\contentsline {section}{\numberline {9}Item Pass/Fail Criteria}{11}
+\contentsline {section}{\numberline {10}Suspension and Resumption of Testing}{12}
+\contentsline {section}{\numberline {11}Test Deliverables}{12}
+\contentsline {section}{\numberline {12}Remaining Tasks}{12}
+\contentsline {section}{\numberline {13}Environmental Needs}{13}
+\contentsline {section}{\numberline {14}Staffing and Training Needs}{13}
+\contentsline {section}{\numberline {15}Responsibilities}{13}
+\contentsline {section}{\numberline {16}Schedule}{13}
+\contentsline {section}{\numberline {17}Planning Risks and Contingencies}{14}
+\contentsline {section}{\numberline {18}Approvals}{14}
